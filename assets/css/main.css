@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --cor-bg-main: #ffd460;
+    --cor-bg-main2: #f07b3f;
+    --cor-bg-main3: #ea5455;
+    --cor-bg-main4: #2d4059;
+}
+body{
+    background-color: var(--cor-bg-main);
+}

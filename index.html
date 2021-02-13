@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>moneyQuotes</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </head>
 <body>
+
+    <div class="container">
+        <header class="header">
+            <nav>
+                <div class="nav-wrapper">
+                  <a href="#" class="brand-logo right">MoneyQuotes</a>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="#">Dolar</a></li>
+                    <li><a href="#">Euro</a></li>
+                    <li><a href="#">Bitcoin</a></li>
+                    <li><a href="#">Ethereum</a></li>
+                  </ul>
+                </div>
+              </nav>
+        </header>
+        <section class="container-section">
+            <div class="section1">
+                <blockquote>
+                  Cotacao da moeda no momento atual.
+                </blockquote>
+            </div>
+            <section class="section2 row">
+                <div class="col s12">
+                   <h1>Dolar</h1>
+                   <div class="col s6">
+                       <p></p>
+                   </div>
+                   <div class="col s6"></div> 
+                </div>
+            </section>
+        </section>
+    </div>
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assets/js/main.js"></script>
