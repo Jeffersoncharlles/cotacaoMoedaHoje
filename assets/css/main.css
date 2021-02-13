@@ -10,7 +10,14 @@
 }
 body{
     background-color: var(--cor-bg-main);
+    display: flex;
+    min-height: 100vh;
+    /* max-height: 100%; */
+    flex-direction: column;
 }
+.main {
+    flex: 1 0 auto;
+  }
 
 .dolar span,
 .euro span,
@@ -20,4 +27,10 @@ body{
     margin: 0;
     padding: 0;
     color: var(--cor-bg-main3);
+}
+.valors h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.container-section{
+    min-height: 89vh;
 }

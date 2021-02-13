@@ -2,10 +2,10 @@ let dolarPage = document.querySelector('.dolar span');
 let eurorPage = document.querySelector('.euro span');
 let bitPage = document.querySelector('.bitcoin span');
 let ethPage = document.querySelector('.eth span');
-let numeroMulti = '1';
 
 // Url api
 const apiRest = 'https://economia.awesomeapi.com.br/all/USD-BRL,EUR-BRL,BTC-BRL,ETH-BRL';
+const apiRest2 = 'https://economia.awesomeapi.com.br/json/daily/USD-BRL/15';
 
 //functions de captor Moedas
 function captDolar(restor,numeroMulti){
@@ -23,10 +23,14 @@ function captDolar(restor,numeroMulti){
     dolarPage.innerHTML = `Cotação dolar  R$: ${n}`;
 }
 
-function quantoDaEsseValor(numeroMulti=1,numeroMoeda=1){
-    let result = numeroMulti * numeroMoeda ;
+function quantoDaEsseValor(){
+    
 
-    return result;
+    
+}
+
+function graficUSD(USD){
+    
 }
 
 function captEuror(restor){
@@ -40,7 +44,7 @@ function captEuror(restor){
     console.log(n);
 }
 function captBitc(restor){
-    // console.log(restor.BTC)
+     console.log(restor.BTC)
     //Bitcon
     let valor = parseFloat(restor.BTC.ask);
     let n = valor.toFixed(2);
@@ -48,11 +52,15 @@ function captBitc(restor){
     console.log(n);
 }
 function captETH(restor){
-    // console.log(restor.ETH)
+     console.log(restor.ETH)
 
+    let dolar = parseFloat(restor.USD.ask)
     let valor = parseFloat(restor.ETH.ask);
-    let n = valor.toFixed(2);
 
+    let result = dolar * valor ;
+    console.log(result);
+
+    let n = result.toFixed(2);
     ethPage.innerHTML = `Cotação do Ethereum R$: ${n}`;
     console.log(n);
 }
@@ -67,4 +75,14 @@ axios({
     captEuror(restor);
     captBitc(restor);
     captETH(restor);
+}).catch(err=>console.log("error apirest"));
+
+
+// axios (ajax ) grafic
+axios({
+    method:'get',
+    url:apiRest2,
+}).then(res=>{
+    graficUSD(res.data);
+    
 }).catch(err=>console.log("error apirest"));
