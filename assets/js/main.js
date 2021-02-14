@@ -29,6 +29,29 @@ function quantoDaEsseValor(){
     
 }
 
+function valores(restor){
+    let euro = parseFloat(restor.EUR.ask);
+    let eur = euro.toFixed(2);
+
+    let dolar = parseFloat(restor.USD.ask);
+    let usd = dolar.toFixed(2);
+
+    let bitcon = parseFloat(restor.BTC.ask);
+    let btc = bitcon.toFixed(2);
+    
+    let eth = parseFloat(restor.ETH.ask);
+
+    let result = dolar * eth ;
+    let ether = result.toFixed(2);
+    
+
+
+    eurorPage.innerHTML = `Cotação Euro  R$: ${eur}`;
+    dolarPage.innerHTML = `Cotação dolar  R$: ${usd}`;
+    bitPage.innerHTML = `Cotação Bitcoin  R$: ${btc}`;
+    ethPage.innerHTML = `Cotação do Ethereum R$: ${ether}`;
+}
+
 function graficUSD(USD){
     
 }
@@ -71,10 +94,12 @@ axios({
     url:apiRest,
 }).then(res=>{
     var restor = res.data;
-    captDolar(restor);
+   /*  captDolar(restor);
     captEuror(restor);
     captBitc(restor);
-    captETH(restor);
+    captETH(restor); */
+
+    valores(restor);
 }).catch(err=>console.log("error apirest"));
 
 
